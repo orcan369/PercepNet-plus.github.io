@@ -3,28 +3,74 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-  <title>PercepNet+ samples</title>
+  <title>DCCRN+: Channel-wise Subband DCCRN with SNR Estimation for Speech Enhancement</title>
   <link rel="stylesheet" type="text/css" href="./stylesheets/github-light.css">
 </head>
 
 <body>
   <article>
     <header>
-      <h1></h1>
+      <h1>Samples from "DCCRN+: Channel-wise Subband DCCRN with SNR Estimation for Speech Enhancement</h1>
     </header>
   </article>
 
-  <div><b>
+  <div><b>Authors:</b>Shubo Lv, Yanxin Hu, Shimin Zhang and Lei Xie
+  </div>
+  <div><b>Abstract:</b>Deep complex convolution recurrent network (DCCRN), which extends CRN with complex structure, has achieved superior performance in MOS evaluation in Interspeech 2020 deep noise suppression challenge (DNS2020). This paper further extends DCCRN with the following significant revisions. We first extend the model to sub-band processing where the bands are split and merged by learnable neural network filters instead of engineered FIR filters, leading to a faster noise suppressor trained in an end-to-end manner. Then the LSTM is further substituted with a complex TF-LSTM to better model temporal dependencies along both time and frequency axes. Moreover, instead of simply concatenating the output of each encoder layer to the input of the corresponding decoder layer, we use convolution blocks to first aggregate essential information from the encoder output before feeding it to the decoder layers. We specifically formulate the decoder with an extra a priori SNR estimation module to maintain good speech quality while removing noise. Finally a post-processing module is adopted to further suppress the unnatural residual noise. The new model, named DCCRN+, has surpassed the original DCCRN as well as several competitive models in terms of PESQ and DNSMOS, and has achieved superior performance in the new Interspeech 2021 DNS challenge. 
   </div>
   <hr style="height:1px;border:none;border-top:1px solid #555555; width:130%">
-  <h2>Part1: test samples</h2>
+  <h2>Part1: SNR>14dB</h2>
   <style type="text/css">
     .tg {
       border-collapse: collapse;
       border-spacing: 0;
     }
 
-   
+    .tg td {
+      border-bottom-width: 1px;
+      border-color: black;
+      border-style: solid;
+      border-top-width: 1px;
+      border-width: 0px;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      overflow: hidden;
+      padding: 10px 5px;
+      word-break: normal;
+    }
+
+    .tg th {
+      border-bottom-width: 1px;
+      border-color: black;
+      border-style: solid;
+      border-top-width: 1px;
+      border-width: 0px;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      font-weight: normal;
+      overflow: hidden;
+      padding: 10px 5px;
+      word-break: normal;
+    }
+
+    .tg .tg-c3ow {
+      border-color: inherit;
+      font-weight: bold;
+      text-align: center;
+      vertical-align: top
+    }
+
+    .tg .tg-0pky {
+      border-color: inherit;
+      text-align: left;
+      vertical-align: top
+    }
+
+    .tg .tg-pcvp {
+      border-color: inherit;
+      text-align: left;
+      vertical-align: top
+    }
 
     .tg .tg-ihkz {
       border-color: inherit;
@@ -32,27 +78,83 @@
       vertical-align: top
     }
 
+    .tg .tg-7kms {
+      border-color: inherit;
+      font-family: Arial, Helvetica, sans-serif !important;
+      ;
+      text-align: center;
+      vertical-align: top
+    }
+  </style>
+  <table class="tg" style="undefined;table-layout: fixed; width: 493px">
+    <colgroup>
+      <col style="width: 85px">
+      <col style="width: 300px">
+      <col style="width: 300px">
+      <col style="width: 300px">
+      <col style="width: 300px">
+      <col style="width: 300px">
+    </colgroup>
+    <thead>
+      <tr>
+        <th class="tg-c3ow">Model</th>
+        <th class="tg-c3ow">sample1</th>
+        <th class="tg-c3ow">sample2</th>
+	<th class="tg-c3ow">sample3</th>
+      </tr>
+    </thead>
     <tbody>
       <tr>
-        <td class="tg-0pky">high SNR(>14dB)</td>
+        <td class="tg-0pky">Noisy</td>
 		<td class="tg-ihkz"><audio controls=""><source src="./high-SNR sampel1_noisy.wav"></audio></td>
-		<td class="tg-ihkz"><audio controls=""><source src="./high-SNR sampel1_denoised.wav"></audio></td>
 		<td class="tg-ihkz"><audio controls=""><source src="./high-SNR sampel2_noisy.wav"></audio></td>
-		<td class="tg-ihkz"><audio controls=""><source src="./high-SNR sampel2_denoised.wav"></audio></td>
 		<td class="tg-ihkz"><audio controls=""><source src="./high-SNR sampel3_noisy.wav"></audio></td>
-    <td class="tg-ihkz"><audio controls=""><source src="./high-SNR sampel3_denoised.wav"></audio></td>
+
 	  </tr>
 	  
       <tr>
-	    <td class="tg-0pky">low SNR(≤14dB)</td>
-		<td class="tg-ihkz"><audio controls=""><source src="./low-SNR sampel1_noisy.wav"></audio></td>
-		<td class="tg-ihkz"><audio controls=""><source src="./low-SNR sampel1_denoised.wav"></audio></td>
-		<td class="tg-ihkz"><audio controls=""><source src="./low-SNR sampel2_noisy.wav"></audio></td>
-		<td class="tg-ihkz"><audio controls=""><source src="./low-SNR sampel2_denoised.wav"></audio></td>
-		<td class="tg-ihkz"><audio controls=""><source src="./low-SNR sampel3_noisy.wav"></audio></td>
-    <td class="tg-ihkz"><audio controls=""><source src="./low-SNR sampel3_denoised.wav"></audio></td>
-	  </tr>
-	  
-    
-    </tbody>
+	    <td class="tg-0pky">Denoised</td>
+		<td class="tg-ihkz"><audio controls=""><source src="./high-SNR sampel1_denoised.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./high-SNR sampel2_denoised.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./high-SNR sampel3_denoised.wav"></audio></td>
 
+	  </tr>
+    </tbody>
+    </table>
+  <hr style="height:1px;border:none;border-top:1px solid #555555; width:130%">
+  <h2>Part2: SNR≤14dB</h2>
+  <table class="tg" style="undefined;table-layout: fixed; width: 493px">
+    <colgroup>
+      <col style="width: 85px">
+      <col style="width: 300px">
+      <col style="width: 300px">
+      <col style="width: 300px">
+      <col style="width: 300px">
+      <col style="width: 300px">
+    </colgroup>
+    <thead>
+      <tr>
+        <th class="tg-c3ow">Model</th>
+        <th class="tg-c3ow">Sample 1</th>
+        <th class="tg-c3ow">Sample 2</th>
+        <th class="tg-c3ow">Sample 3</th>
+      </tr>
+    </thead>	
+	<tbody>
+      <tr>
+        <td class="tg-0pky">Noisy</td>
+		<td class="tg-ihkz"><audio controls=""><source src="./low-SNR sampel1_noisy.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./low-SNR sampel2_noisy.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./low-SNR sampel3_noisy.wav"></audio></td>
+
+      </tr>
+      <tr>
+        <td class="tg-0pky">Denoised</td>
+		<td class="tg-ihkz"><audio controls=""><source src="./low-SNR sampel1_denoised.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./low-SNR sampel2_denoised.wav"></audio></td>
+		<td class="tg-ihkz"><audio controls=""><source src="./low-SNR sampel3_denoised.wav"></audio></td>
+
+      </tr>
+    </tbody>
+    </table>
+ 
